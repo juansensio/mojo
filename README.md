@@ -1,0 +1,2 @@
+# mojo
+Learning Mojo 🔥

@@ -15,3 +15,8 @@ https://docs.modular.com/mojo/manual/basics
 
 - [functions](basics/functions.ipynb)
 - [variables](basics/variables.ipynb)
+- [structs](basics/structs.ipynb)
+- [traits](basics/traits.ipynb)
+- [blocks](basics/blocks.ipynb)
+- [comments](basics/comments.ipynb)
+- [python](basics/python.ipynb) integration

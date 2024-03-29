@@ -188,17 +188,17 @@ if __name__ == '__main__':
     print(args)
     if args.b:
         data = []
-        Ns = [10, 100, 1000, 10000]
+        Ns = [10, 50, 100, 200]
         for n in Ns:
             print(f"Running benchmark for {n}x{n}")
             print("Naive")
-            _, elapsed1 = gol_naive(args.n, args.n, args.its, False, args.seed)
+            _, elapsed1 = gol_naive(n, n, args.its, False, args.seed)
             print("Padded")
-            _, elapsed2 = gol_pad(args.n, args.n, args.its, False, args.seed)
+            _, elapsed2 = gol_pad(n, n, args.its, False, args.seed)
             print("Matrix")
-            _, elapsed3 = gol_matrix(args.n, args.n, args.its, False, args.seed, False)
+            _, elapsed3 = gol_matrix(n, n, args.its, False, args.seed, False)
             print("Sparse")
-            _, elapsed4 = gol_matrix(args.n, args.n, args.its, False, args.seed, True)
+            _, elapsed4 = gol_matrix(n, n, args.its, False, args.seed, True)
             data.append([args.its / elapsed1, args.its / elapsed2, args.its / elapsed3, args.its / elapsed4])
         df = pd.DataFrame(data, columns=['naive', 'pad', 'matrix', 'sparse'], index=Ns)
         df.to_csv('benchmark.csv')
@@ -216,6 +216,6 @@ if __name__ == '__main__':
     frames, elapsed = gol(args.n, args.n, args.its, args.prog, args.seed, args.s)
     print(f"Elapsed time: {elapsed:0.4f} seconds")
     if args.v:
-        if args.m:
+        if args.m or args.s:
             frames = [f.reshape(args.n, args.n) for f in frames]
         video(frames, args.o, args.fps, args.res)

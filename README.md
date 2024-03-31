@@ -20,3 +20,7 @@ https://docs.modular.com/mojo/manual/basics
 - [blocks](basics/blocks.ipynb)
 - [comments](basics/comments.ipynb)
 - [python](basics/python.ipynb) integration
+
+## Projects
+
+- [Game of Life](projects/gol)
